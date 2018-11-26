@@ -1,29 +1,27 @@
 //
-//  BooksTableViewController.swift
+//  FilmsTableViewController.swift
 //  Bookshop
 //
-//  Created by Weronika Piotrowska on 25/11/2018.
+//  Created by Weronika Piotrowska on 26/11/2018.
 //  Copyright © 2018 nimbusek. All rights reserved.
 //
 
 import UIKit
 
-class BooksTableViewController: UITableViewController {
+class FilmsTableViewController: UITableViewController {
+    
+    var filmTitles = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats And Deli", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
+    
+    var filmTypes = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
+    
+    var filmTimes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    
+    var filmCountries = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
 
-    var bookTitles = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster", "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso", "Upstate", "Traif", "Graham Avenue Meats And Deli", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional", "Barrafina", "Donostia", "Royal Oak", "CASK Pub and Kitchen"]
-    
-    var bookAuthors = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
-    
-    var bookYears = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
-    
-    var bookPublishers = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 110;
-
         tableView.cellLayoutMarginsFollowReadableWidth = true
-        //navigationController?.navigationBar.prefersLargeTitles = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,24 +37,24 @@ class BooksTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookTitles.count
+        // #warning Incomplete implementation, return the number of rows
+        return filmTitles.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "datacell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BooksTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FilmsTableViewCell
         
         //Configure cell
-        cell.titleLabel.text = bookTitles[indexPath.row]
-        cell.authorLabel.text = bookAuthors[indexPath.row]
-        cell.yearLabel.text = bookYears[indexPath.row]
-        cell.publisherLabel.text = bookPublishers[indexPath.row]
+        cell.titleLabel.text = filmTitles[indexPath.row]
+        cell.typeLabel.text = filmTypes[indexPath.row]
+        cell.timeLabel.text = filmTimes[indexPath.row]
+        cell.countryLabel.text = filmCountries[indexPath.row]
         //cell.thumbnailImageView.image = UIImage(named: bookTitles[indexPath.row])
-        cell.thumbnailImageView.image = UIImage(named: "books")
-
+        cell.thumbnailImageView.image = UIImage(named: "films")
+        
         return cell
     }
- 
 
     /*
     // Override to support conditional editing of the table view.
