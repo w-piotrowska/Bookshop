@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class BasketTableViewController: UITableViewController {
+    
+    var count = 10;
+    var basketTitleName = [""]
+    var basketCostName = [""]
+    
+    var basketItems = [BasketTest]()
+    var dat:NSManagedObjectContext!
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.rowHeight = 76;
+        
+        tableView.cellLayoutMarginsFollowReadableWidth = true
+        
+        dat = appDelegate?.persistentContainer.viewContext
+        self.tableView.dataSource = self
+        loadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,12 +41,48 @@ class BasketTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return basketItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "datacell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BasketTableViewCell
+        
+        let foodItem = basketItems[indexPath.row]
+        
+        //Configure cell
+        //cell.titleLabel.text = basketTitleName[indexPath.row]
+        cell.titleLabel.text = foodItem.title
+        //cell.costLabel.text = basketCostName[indexPath.row]
+        cell.costLabel.text = foodItem.cost?.description
+        //cell.thumbnailImageView.image = UIImage(named: bookTitles[indexPath.row])
+        cell.thumbnailImageView.image = UIImage(named: "books")
+        
+        return cell
+    }
+    
+    func loadData(){
+        // 1
+        let foodRequest:NSFetchRequest<BasketTest> = BasketTest.fetchRequest()
+        
+        // 2
+        //let sortDescriptor = NSSortDescriptor(key: "added", ascending: false)
+        //foodRequest.sortDescriptors = [sortDescriptor]
+        
+        // 3
+        do {
+            try basketItems = dat.fetch(foodRequest)
+        }catch {
+            print("Could not load data")
+        }
+        
+        // 4
+        self.tableView.reloadData()
     }
 
     /*

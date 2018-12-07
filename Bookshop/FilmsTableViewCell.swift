@@ -14,6 +14,7 @@ class FilmsTableViewCell: UITableViewCell {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var countryLabel: UILabel!
+    @IBOutlet var costLabel: UILabel!
     @IBOutlet var thumbnailImageView: UIImageView! {
         didSet {
             thumbnailImageView.layer.cornerRadius = 45

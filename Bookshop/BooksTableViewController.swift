@@ -18,6 +18,9 @@ class BooksTableViewController: UITableViewController {
     
     var bookPublishers = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    var bookCosts = [11.50, 22.90, 39.99, 100.10, 98.35, 26.50, 27.49, 27.45, 92.45, 12.45, 32.11, 93.55, 21.65, 64.23, 93.65, 37.99, 27.36, 42.86, 40.99, 72.89, 10.93]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 110;
@@ -51,10 +54,24 @@ class BooksTableViewController: UITableViewController {
         cell.authorLabel.text = bookAuthors[indexPath.row]
         cell.yearLabel.text = bookYears[indexPath.row]
         cell.publisherLabel.text = bookPublishers[indexPath.row]
+        cell.costLabel.text = String(format:"%.2f", bookCosts[indexPath.row])
         //cell.thumbnailImageView.image = UIImage(named: bookTitles[indexPath.row])
         cell.thumbnailImageView.image = UIImage(named: "books")
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBookDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! BooksDetailViewController
+                destinationController.bookTitleName = bookTitles[indexPath.row]
+                destinationController.bookAuthorName = bookAuthors[indexPath.row]
+                destinationController.bookYearName = bookYears[indexPath.row]
+                destinationController.bookPublisherName = bookPublishers[indexPath.row]
+                destinationController.bookCostName = bookCosts[indexPath.row]
+            }
+        }
     }
  
 

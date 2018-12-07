@@ -17,6 +17,8 @@ class DiscsTableViewController: UITableViewController {
     var discTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
     var discYears = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    
+    var discCosts = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +54,24 @@ class DiscsTableViewController: UITableViewController {
         cell.artistLabel.text = discArtists[indexPath.row]
         cell.typeLabel.text = discTypes[indexPath.row]
         cell.yearLabel.text = discYears[indexPath.row]
+        cell.costLabel.text = discCosts[indexPath.row]
         //cell.thumbnailImageView.image = UIImage(named: bookTitles[indexPath.row])
         cell.thumbnailImageView.image = UIImage(named: "discs")
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDiscDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! DiscsDetailViewController
+                destinationController.discTitleName = discTitles[indexPath.row]
+                destinationController.discArtistName = discArtists[indexPath.row]
+                destinationController.discTypeName = discTypes[indexPath.row]
+                destinationController.discYearName = discYears[indexPath.row]
+                destinationController.discCostName = discCosts[indexPath.row]
+            }
+        }
     }
 
     /*

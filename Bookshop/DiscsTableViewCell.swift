@@ -14,6 +14,7 @@ class DiscsTableViewCell: UITableViewCell {
     @IBOutlet var artistLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var yearLabel: UILabel!
+    @IBOutlet var costLabel: UILabel!
     @IBOutlet var thumbnailImageView: UIImageView! {
         didSet {
             thumbnailImageView.layer.cornerRadius = 45

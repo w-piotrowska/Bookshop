@@ -9,6 +9,15 @@
 import UIKit
 
 class BasketTableViewCell: UITableViewCell {
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var thumbnailImageView: UIImageView! {
+        didSet {
+            thumbnailImageView.layer.cornerRadius = 30
+            thumbnailImageView.clipsToBounds = true
+        }
+    }
+    @IBOutlet var costLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

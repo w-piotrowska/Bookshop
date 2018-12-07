@@ -17,6 +17,8 @@ class FilmsTableViewController: UITableViewController {
     var filmTimes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
     var filmCountries = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
+    
+    var filmCosts = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "Americam / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +52,24 @@ class FilmsTableViewController: UITableViewController {
         cell.typeLabel.text = filmTypes[indexPath.row]
         cell.timeLabel.text = filmTimes[indexPath.row]
         cell.countryLabel.text = filmCountries[indexPath.row]
+        cell.costLabel.text = filmCosts[indexPath.row]
         //cell.thumbnailImageView.image = UIImage(named: bookTitles[indexPath.row])
         cell.thumbnailImageView.image = UIImage(named: "films")
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showFilmDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! FilmsDetailViewController
+                destinationController.filmTitleName = filmTitles[indexPath.row]
+                destinationController.filmTypeName = filmTypes[indexPath.row]
+                destinationController.filmTimeName = filmTimes[indexPath.row]
+                destinationController.filmCountryName = filmCountries[indexPath.row]
+                destinationController.filmCostName = filmCosts[indexPath.row]
+            }
+        }
     }
 
     /*

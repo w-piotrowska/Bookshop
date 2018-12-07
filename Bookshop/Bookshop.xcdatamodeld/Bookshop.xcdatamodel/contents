@@ -1,4 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Basket" representedClassName="Basket" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="basketBook" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="bookBasket" inverseEntity="Book" syncable="YES"/>
+        <relationship name="basketDisc" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Disc" inverseName="discBasket" inverseEntity="Disc" syncable="YES"/>
+        <relationship name="basketFilm" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Film" inverseName="filmBasket" inverseEntity="Film" syncable="YES"/>
+    </entity>
+    <entity name="BasketTest" representedClassName="BasketTest" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quality" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publisher" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="bookBasket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="basketBook" inverseEntity="Basket" syncable="YES"/>
+    </entity>
+    <entity name="Disc" representedClassName="Disc" syncable="YES" codeGenerationType="class">
+        <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="discBasket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="basketDisc" inverseEntity="Basket" syncable="YES"/>
+    </entity>
+    <entity name="Film" representedClassName="Film" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="filmBasket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Basket" inverseName="basketFilm" inverseEntity="Basket" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Basket" positionX="-343.1015625" positionY="52.96875" width="128" height="103"/>
+        <element name="Book" positionX="-83.3046875" positionY="36.1171875" width="128" height="163"/>
+        <element name="Film" positionX="-512.43359375" positionY="72.80859375" width="128" height="163"/>
+        <element name="Disc" positionX="-224.23828125" positionY="258.44921875" width="128" height="163"/>
+        <element name="BasketTest" positionX="-261" positionY="234" width="128" height="105"/>
+    </elements>
 </model>

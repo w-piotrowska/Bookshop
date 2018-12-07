@@ -21,6 +21,9 @@
 		973D95B121ABD4D500E78B83 /* DiscsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95B021ABD4D500E78B83 /* DiscsTableViewCell.swift */; };
 		973D95B521ABD88800E78B83 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95B421ABD88800E78B83 /* BasketTableViewCell.swift */; };
 		973D95B721ABD8AF00E78B83 /* BasketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95B621ABD8AF00E78B83 /* BasketTableViewController.swift */; };
+		973D95B921AC1E8F00E78B83 /* BooksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95B821AC1E8F00E78B83 /* BooksDetailViewController.swift */; };
+		973D95BB21AC1EAD00E78B83 /* FilmsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95BA21AC1EAD00E78B83 /* FilmsDetailViewController.swift */; };
+		973D95BD21AC1EC300E78B83 /* DiscsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973D95BC21AC1EC300E78B83 /* DiscsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		973D95B021ABD4D500E78B83 /* DiscsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscsTableViewCell.swift; sourceTree = "<group>"; };
 		973D95B421ABD88800E78B83 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		973D95B621ABD8AF00E78B83 /* BasketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewController.swift; sourceTree = "<group>"; };
+		973D95B821AC1E8F00E78B83 /* BooksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDetailViewController.swift; sourceTree = "<group>"; };
+		973D95BA21AC1EAD00E78B83 /* FilmsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsDetailViewController.swift; sourceTree = "<group>"; };
+		973D95BC21AC1EC300E78B83 /* DiscsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +86,14 @@
 				973D95A021A9A03200E78B83 /* Info.plist */,
 				973D95A621AA1B0000E78B83 /* BooksTableViewController.swift */,
 				973D95A821AA1B2500E78B83 /* BooksTableViewCell.swift */,
+				973D95B821AC1E8F00E78B83 /* BooksDetailViewController.swift */,
 				973D959821A9A03100E78B83 /* Bookshop.xcdatamodeld */,
 				973D95AA21ABD49200E78B83 /* FilmsTableViewCell.swift */,
 				973D95AC21ABD4B000E78B83 /* FilmsTableViewController.swift */,
+				973D95BA21AC1EAD00E78B83 /* FilmsDetailViewController.swift */,
 				973D95AE21ABD4C100E78B83 /* DiscsTableViewController.swift */,
 				973D95B021ABD4D500E78B83 /* DiscsTableViewCell.swift */,
+				973D95BC21AC1EC300E78B83 /* DiscsDetailViewController.swift */,
 				973D95B421ABD88800E78B83 /* BasketTableViewCell.swift */,
 				973D95B621ABD8AF00E78B83 /* BasketTableViewController.swift */,
 			);
@@ -166,9 +175,12 @@
 				973D95AB21ABD49200E78B83 /* FilmsTableViewCell.swift in Sources */,
 				973D959421A9A03100E78B83 /* ViewController.swift in Sources */,
 				973D95B521ABD88800E78B83 /* BasketTableViewCell.swift in Sources */,
+				973D95BD21AC1EC300E78B83 /* DiscsDetailViewController.swift in Sources */,
 				973D959221A9A03100E78B83 /* AppDelegate.swift in Sources */,
 				973D95AD21ABD4B000E78B83 /* FilmsTableViewController.swift in Sources */,
+				973D95B921AC1E8F00E78B83 /* BooksDetailViewController.swift in Sources */,
 				973D95A721AA1B0000E78B83 /* BooksTableViewController.swift in Sources */,
+				973D95BB21AC1EAD00E78B83 /* FilmsDetailViewController.swift in Sources */,
 				973D95B721ABD8AF00E78B83 /* BasketTableViewController.swift in Sources */,
 				973D95AF21ABD4C100E78B83 /* DiscsTableViewController.swift in Sources */,
 				973D95B121ABD4D500E78B83 /* DiscsTableViewCell.swift in Sources */,

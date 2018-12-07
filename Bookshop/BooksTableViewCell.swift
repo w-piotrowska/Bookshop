@@ -20,6 +20,7 @@ class BooksTableViewCell: UITableViewCell {
             thumbnailImageView.clipsToBounds = true
         }
     }
+    @IBOutlet var costLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
